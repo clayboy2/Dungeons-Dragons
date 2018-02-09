@@ -48,10 +48,6 @@ public class BattleModeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         monsterList = new ArrayList<>();
         initiativeList = new ArrayList<>();
-        ObservableList<Entity> items = FXCollections.observableList(monsterList);
-        monsters.setItems(items);
-        ObservableList<Entity> itemsInit = FXCollections.observableList(initiativeList);
-        initiative.setItems(itemsInit);
     }
     
     @FXML
@@ -77,6 +73,21 @@ public class BattleModeController implements Initializable {
     public void calculate(ActionEvent e)
     {
         Collections.sort(initiativeList);
+        ArrayList<String> initNames = new ArrayList<>();
+        ArrayList<String> monsterNames = new ArrayList<>();
+        for (Entity s : monsterList)
+        {
+            monsterNames.add(s.getName());
+        }
+        for (Entity s : initiativeList)
+        {
+            initNames.add(s.getName());
+        }
+        ObservableList<String> initOL = FXCollections.observableList(initNames);
+        ObservableList<String> monsterOL = FXCollections.observableList(monsterNames);
+        initiative.setItems(initOL);
+        monsters.setItems(monsterOL);
         initiative.refresh();
+        monsters.refresh();
     }
 }

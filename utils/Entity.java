@@ -35,7 +35,7 @@ public class Entity implements Comparable{
         {
             throw new IllegalArgumentException("Comparing to non-entity class");
         }
-        return this.initiative - ((Entity)o).getInit();
+        return ((Entity)o).getInit() - this.initiative;
     }
 
 }

@@ -15,20 +15,27 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
+ * FXML Controller class
  *
  * @author austen
  */
 public class MainController implements Initializable {
+
+    
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
     
     @FXML
-    private Label label;
-    
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
+    public void handleButtonAction(ActionEvent event)
+    {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("/gui/BattleMode.fxml"));
@@ -38,14 +45,8 @@ public class MainController implements Initializable {
             stage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
-            System.out.println("Error Launcing battle screen");
+            System.out.println("Error Launcing Battle Mode");
             e.printStackTrace();
         }
     }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
 }
