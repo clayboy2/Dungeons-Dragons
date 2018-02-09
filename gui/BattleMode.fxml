@@ -22,31 +22,31 @@
          <bottom>
             <BorderPane prefHeight="24.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <right>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Add Init" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#addInit" prefHeight="25.0" prefWidth="102.0" text="Add Init" BorderPane.alignment="CENTER" />
                </right>
                <left>
-                  <TextField prefHeight="25.0" prefWidth="445.0" BorderPane.alignment="CENTER" />
+                  <TextField fx:id="playerName" prefHeight="25.0" prefWidth="445.0" BorderPane.alignment="CENTER" />
                </left>
                <center>
-                  <TextField prefHeight="25.0" prefWidth="60.0" BorderPane.alignment="CENTER" />
+                  <TextField fx:id="playerInit" prefHeight="25.0" prefWidth="60.0" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
          </bottom>
          <top>
             <BorderPane prefHeight="21.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <left>
-                  <TextField prefHeight="40.0" prefWidth="441.0" BorderPane.alignment="CENTER" />
+                  <TextField fx:id="monsterName" prefHeight="40.0" prefWidth="441.0" BorderPane.alignment="CENTER" />
                </left>
                <center>
-                  <TextField prefHeight="41.0" prefWidth="367.0" BorderPane.alignment="CENTER" />
+                  <TextField fx:id="monsterInit" prefHeight="41.0" prefWidth="367.0" BorderPane.alignment="CENTER" />
                </center>
                <right>
-                  <Button mnemonicParsing="false" text="Add Monster" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#addMonster" text="Add Monster" BorderPane.alignment="CENTER" />
                </right>
             </BorderPane>
          </top>
          <center>
-            <Button mnemonicParsing="false" text="Calculate" BorderPane.alignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#calculate" text="Calculate" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>

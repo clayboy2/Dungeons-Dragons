@@ -7,6 +7,7 @@ package gui;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import utils.Entity;
 
 /**
  * FXML Controller class
@@ -36,8 +38,8 @@ public class BattleModeController implements Initializable {
     @FXML
     private TextField monsterInit;
     
-    private ArrayList<String> monsterList;
-    private ArrayList<String> initiativeList;
+    private ArrayList<Entity> monsterList;
+    private ArrayList<Entity> initiativeList;
     
     /**
      * Initializes the controller class.
@@ -46,27 +48,35 @@ public class BattleModeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         monsterList = new ArrayList<>();
         initiativeList = new ArrayList<>();
-        ObservableList<String> items = FXCollections.observableList(monsterList);
+        ObservableList<Entity> items = FXCollections.observableList(monsterList);
         monsters.setItems(items);
-        ObservableList<String> itemsInit = FXCollections.observableList(initiativeList);
+        ObservableList<Entity> itemsInit = FXCollections.observableList(initiativeList);
         initiative.setItems(itemsInit);
     }
     
     @FXML
     public void addInit(ActionEvent e)
     {
-        
+        String name = playerName.getText();
+        int init = Integer.parseInt(playerInit.getText());
+        Entity thing = new Entity(name,init);
+        initiativeList.add(thing);
     }
     
     @FXML
     public void addMonster(ActionEvent e)
     {
-        
+        String name = monsterName.getText();
+        int init = Integer.parseInt(monsterInit.getText());
+        Entity thing = new Entity(name,init);
+        monsterList.add(thing);
+        initiativeList.add(thing);
     }
     
     @FXML
     public void calculate(ActionEvent e)
     {
-        
+        Collections.sort(initiativeList);
+        initiative.refresh();
     }
 }
