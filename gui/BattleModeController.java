@@ -57,6 +57,8 @@ public class BattleModeController implements Initializable {
         int init = Integer.parseInt(playerInit.getText());
         Entity thing = new Entity(name,init);
         initiativeList.add(thing);
+        playerName.setText("");
+        playerInit.setText("");
     }
     
     @FXML
@@ -67,6 +69,8 @@ public class BattleModeController implements Initializable {
         Entity thing = new Entity(name,init);
         monsterList.add(thing);
         initiativeList.add(thing);
+        monsterName.setText("");
+        monsterInit.setText("");
     }
     
     @FXML

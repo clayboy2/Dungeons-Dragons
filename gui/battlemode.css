@@ -2,6 +2,10 @@
  * Empty Stylesheet file.
  */
 
-.mainFxmlClass {
+.list-view {
+    -fx-cell-size: 30;
+}
 
+.list-cell:filled {
+    -fx-font-size: 24px;
 }
