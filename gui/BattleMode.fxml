@@ -14,10 +14,10 @@
    <children>
       <BorderPane layoutX="36.0" layoutY="63.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <right>
-            <ListView fx:id="initiative" prefHeight="400.0" prefWidth="106.0" BorderPane.alignment="CENTER" />
+            <ListView fx:id="initiative" prefHeight="350.0" prefWidth="192.0" BorderPane.alignment="CENTER" />
          </right>
          <left>
-            <ListView fx:id="monsters" prefHeight="400.0" prefWidth="106.0" BorderPane.alignment="CENTER" />
+            <ListView fx:id="monsters" prefHeight="350.0" prefWidth="194.0" BorderPane.alignment="CENTER" />
          </left>
          <bottom>
             <BorderPane prefHeight="24.0" prefWidth="600.0" BorderPane.alignment="CENTER">
