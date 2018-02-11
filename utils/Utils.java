@@ -11,4 +11,20 @@ package utils;
  */
 public class Utils {
     
+    public class Dice
+    {
+        private int max;
+        private int modifier;
+        
+        public Dice(int max, int modifier)
+        {
+            this.max = max;
+            this.modifier = modifier;
+        }
+        
+        public int makeRoll()
+        {
+            return (int) (Math.random()*max)+1+modifier;
+        }
+    }
 }
